@@ -1,0 +1,18 @@
+{
+  "name": "flipload",
+  "repo": "pazguille/flipload",
+  "description": "Flipping something and show a loading indicator easily.",
+  "version": "0.0.1",
+  "twitter": "@pazguille",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "flipload.css"
+  ]
+}

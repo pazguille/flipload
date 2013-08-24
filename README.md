@@ -34,13 +34,14 @@ window.setTimeout(function () {
     flip.done();
 }, 5000);
 ```
+[View demo page](http://pazguille.github.io/flipload/)
 
 ## API
 
 ### Flipload(el, options)
 Create a new instance of `Flipload`.
-- `el` {HTMLElement}- A given HTML element to create an instance of `Flipload`.
-- [`options`] {Object} - Options to customize an instance.
+- `el` {HTMLElement} - A given HTML element to create an instance of `Flipload`.
+- `options` {Object} [optional] - Options to customize an instance. (Coming soon)
 
 ```js
 var flipload = new Flipload(box, [options]);

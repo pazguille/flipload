@@ -1,6 +1,6 @@
 # Flipload.js
 
-Flipping something and show a loading indicator easily.
+Flipping elements and show a loading indicator easily.
 
 It's compatible with:
 - Chrome

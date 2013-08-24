@@ -21,6 +21,12 @@ Also, you can use the standalone version:
 
 ## How-to
 
+First, you should add the CSS file to your markup:
+```html
+<link rel="stylesheet" href="flipload.css">
+```
+
+Then, you can start to use it and enjoy!
 ```js
 var Flipload = require('flipload');
     box = document.getElementById('box'),

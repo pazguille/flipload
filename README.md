@@ -1,4 +1,4 @@
-# Flipload JS
+# Flipload.js
 
 Flipping something and show a loading indicator easily.
 

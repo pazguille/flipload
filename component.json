@@ -1,11 +1,21 @@
 {
   "name": "flipload",
   "repo": "pazguille/flipload",
-  "description": "Flipping something and show a loading indicator easily.",
+  "description": "Flipping elements and show a loading indicator easily.",
   "version": "0.0.1",
   "twitter": "@pazguille",
-  "keywords": [],
-  "dependencies": {},
+  "keywords": [
+    "flip",
+    "flipping",
+    "loading",
+    "spinner",
+    "spin",
+    "animations",
+    "transitions"
+  ],
+  "dependencies": {
+    "component/spin": "*"
+  },
   "development": {},
   "license": "MIT",
   "main": "index.js",

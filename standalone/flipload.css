@@ -1,0 +1,52 @@
+.flipload-front,
+.flipload-reverse {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform .5s linear;
+    -moz-transition: -ms-transform .5s linear;
+    -ms-transition: -ms-transform .5s linear;
+    -o-transition: -o-transform .5s linear;
+    transition: transform .5s linear;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -oz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flipload-front {
+    -webkit-transform: perspective(3000px) rotateY(0);
+    -moz-transform: perspective(3000px) rotateY(0);
+    -ms-transform: perspective(3000px) rotateY(0);
+    -o-transform: perspective(3000px) rotateY(0);
+    transform: perspective(3000px) rotateY(0);
+}
+
+.flipload-reverse {
+    -webkit-transform: perspective(3000px) rotateY(-180deg);
+    -moz-transform: perspective(3000px) rotateY(-180deg);
+    -ms-transform: perspective(3000px) rotateY(-180deg);
+    -o-transform: perspective(3000px) rotateY(-180deg);
+    transform: perspective(3000px) rotateY(-180deg);
+    pointer-events: none;
+    background-color: #ecf0f1;
+}
+
+.flipload-front.flipload-loading {
+    -webkit-transform: perspective(3000px) rotateY(180deg);
+    -moz-transform: perspective(3000px) rotateY(180deg);
+    -ms-transform: perspective(3000px) rotateY(180deg);
+    -o-transform: perspective(3000px) rotateY(180deg);
+    transform: perspective(3000px) rotateY(180deg);
+}
+
+.flipload-reverse.flipload-loading {
+    -webkit-transform: perspective(3000px) rotateY(0deg);
+    -moz-transform: perspective(3000px) rotateY(0deg);
+    -ms-transform: perspective(3000px) rotateY(0deg);
+    -o-transform: perspective(3000px) rotateY(0deg);
+    transform: perspective(3000px) rotateY(0deg);
+}

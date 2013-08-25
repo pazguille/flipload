@@ -28,7 +28,7 @@ function customizeOptions(options) {
  * @param {String} [options.line] Rotate around horizontal or vertical line. By default is vertical line.
  * @param {String} [options.theme] Select what spinner theme you want to use: light or dark. By default is dark.
  * @param {String} [options.text] Add some text to the spinner.
- * @returns {flipload} An instance of Flipload.
+ * @returns {flipload} Returns a new instance of Flipload.
  */
 function Flipload(el, options) {
 
@@ -47,7 +47,7 @@ function Flipload(el, options) {
  * @function
  * @param {HTMLElement} el A given HTML element to create an instance of Flipload.
  * @param {Object} [options] Options to customize an instance.
- * @returns {flipload} The instance of Flipload.
+ * @returns {flipload} Returns the instance of Flipload.
  */
 Flipload.prototype.initialize = function (el, options) {
 
@@ -57,6 +57,9 @@ Flipload.prototype.initialize = function (el, options) {
     this.options = customizeOptions(options || {});
 
     this.loading = false;
+
+    this._enabled = true;
+
     this.el.className += ' flipload-front flipload-front-' + this.options.line;
 
     // Create reverse element
@@ -76,7 +79,7 @@ Flipload.prototype.initialize = function (el, options) {
  * @memberof! Flipload.prototype
  * @function
  * @private
- * @returns {flipload} The instance of Flipload.
+ * @returns {flipload} Returns the instance of Flipload.
  */
 Flipload.prototype._createReverse = function () {
 
@@ -100,7 +103,7 @@ Flipload.prototype._createReverse = function () {
  * @memberof! Flipload.prototype
  * @function
  * @private
- * @returns {flipload} The instance of Flipload.
+ * @returns {flipload} Returns the instance of Flipload.
  */
 Flipload.prototype._updateReverseSize = function () {
 
@@ -115,7 +118,7 @@ Flipload.prototype._updateReverseSize = function () {
  * @memberof! Flipload.prototype
  * @function
  * @private
- * @returns {flipload} The instance of Flipload.
+ * @returns {flipload} Returns the instance of Flipload.
  */
 Flipload.prototype._updateReverseOffset = function () {
 
@@ -130,7 +133,7 @@ Flipload.prototype._updateReverseOffset = function () {
  * @memberof! Flipload.prototype
  * @function
  * @private
- * @returns {flipload} The instance of Flipload.
+ * @returns {flipload} Returns the instance of Flipload.
  */
 Flipload.prototype._createSpinner = function () {
 
@@ -150,9 +153,13 @@ Flipload.prototype._createSpinner = function () {
  * Update size and positon values of the reverse element and spinner.
  * @memberof! Flipload.prototype
  * @function
- * @returns {flipload} The instance of Flipload.
+ * @returns {flipload} Returns the instance of Flipload.
  */
 Flipload.prototype.update = function () {
+
+    if (!this._enabled) {
+        return this;
+    }
 
     // Update reverse
     this._updateReverseSize();
@@ -169,11 +176,11 @@ Flipload.prototype.update = function () {
  * Flips and shows the spinner.
  * @memberof! Flipload.prototype
  * @function
- * @returns {flipload} The instance of Flipload.
+ * @returns {flipload} Returns the instance of Flipload.
  */
 Flipload.prototype.load = function () {
 
-    if (this.loading) {
+    if (this.loading || !this._enabled) {
         return this;
     }
 
@@ -189,11 +196,11 @@ Flipload.prototype.load = function () {
  * Flips and hides the spinner.
  * @memberof! Flipload.prototype
  * @function
- * @returns {flipload} The instance of Flipload.
+ * @returns {flipload} Returns the instance of Flipload.
  */
 Flipload.prototype.done = function () {
 
-    if (!this.loading) {
+    if (!this.loading || !this._enabled) {
         return this;
     }
 
@@ -209,7 +216,7 @@ Flipload.prototype.done = function () {
  * Toggle the spinner element.
  * @memberof! Flipload.prototype
  * @function
- * @returns {flipload} The instance of Flipload.
+ * @returns {flipload} Returns the instance of Flipload.
  */
 Flipload.prototype.toggle = function () {
 
@@ -218,6 +225,30 @@ Flipload.prototype.toggle = function () {
     }
 
     this.load();
+
+    return this;
+};
+
+/**
+ * Enables an instance of Flipload.
+ * @memberof! Flipload.prototype
+ * @function
+ * @returns {flipload} Returns the instance of Flipload.
+ */
+Flipload.prototype.enable = function () {
+    this._enabled = true;
+
+    return this;
+};
+
+/**
+ * Disables an instance of Flipload.
+ * @memberof! Flipload.prototype
+ * @function
+ * @returns {flipload} Returns the instance of Flipload.
+ */
+Flipload.prototype.disable = function () {
+    this._enabled = false;
 
     return this;
 };

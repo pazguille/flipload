@@ -6,212 +6,13 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="build.css">
-        <style>
-            body {
-                font-family: "Helvetica Neue", Helvetica, Arial, serif;
-                background-color: #f6f8f8;
-                color: #5a6673;
-                text-shadow: 0 -1px #FFF;
-                text-align: center;
-            }
-
-            a {
-                color: #0637B3;
-                text-decoration: none;
-            }
-
-            a:visited {
-                color: #005580;
-            }
-
-            a:hover,
-            a:focus {
-                text-decoration: underline;
-            }
-
-            h1 {
-                font-size: 4em;
-            }
-
-            h2 {
-                font-size: 2.5em;
-            }
-
-            h3 {
-                margin: 10px 0 30px;
-            }
-
-            ul {
-                list-style: none;
-                margin: 70px 0 40px;
-                padding: 0;
-                overflow: hidden;
-            }
-
-            li {
-                position: relative;
-                display: inline-block;
-                vertical-align: top;
-            }
-
-            .box {
-                margin: 10px;
-                padding: 10px;
-                background-color: #fff;
-                border: 5px solid #EEE;
-                text-shadow: none;
-                width: 400px;
-                height: 365px;
-            }
-
-            form, p {
-                text-align: left;
-            }
-
-            form {
-                background-color: #EEE;
-                padding: 20px;
-                margin-top: 50px;
-            }
-
-            label {
-                display: inline-block;
-                margin-bottom: 5px;
-                font-weight: bold;
-                font-size: 14px;
-            }
-
-            .form-group {
-                margin-bottom: 15px;
-            }
-
-            .form-control {
-                display: block;
-                width: 100%;
-                height: 34px;
-                padding: 6px 12px;
-                font-size: 14px;
-                line-height: 1.428571429;
-                margin: 0;
-                -moz-box-sizing: border-box;
-                -ms-box-sizing: border-box;
-                -o-box-sizing: border-box;
-                box-sizing: border-box;
-                color: #555;
-                vertical-align: middle;
-                background-color: #FFF;
-                border: 1px solid #CCC;
-                border-radius: 4px;
-                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-                -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-                transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-            }
-
-            .btn {
-                padding: 6px 12px;
-                border-radius: 4px;
-                background-color: #415B76;
-                text-align: center;
-                font-size: 14px;
-                line-height: 1em;
-                color: #FFF;
-                cursor: pointer;
-                border: none;
-            }
-
-            .btn-primary {
-                color: #ffffff;
-                background-color: #428bca;
-                border-color: #357ebd;
-            }
-
-            .btn-success {
-                color: #ffffff;
-                background-color: #5cb85c;
-                border-color: #4cae4c;
-            }
-
-            .btn-success:hover,
-            .btn-success:focus,
-            .btn-success:active {
-                color: #ffffff;
-                background-color: #47a447;
-                border-color: #398439;
-            }
-
-            .btn-danger {
-                color: #ffffff;
-                background-color: #d9534f;
-                border-color: #d43f3a;
-            }
-
-            .btn-danger:hover,
-            .btn-danger:focus,
-            .btn-danger:active {
-                color: #ffffff;
-                background-color: #d2322d;
-                border-color: #ac2925;
-            }
-
-            .btn-lg {
-                padding: 10px 16px;
-                border-radius: 6px;
-                font-size: 18px;
-            }
-
-            .lead {
-                margin-bottom: 20px;
-                font-size: 21px;
-                font-weight: 200;
-                line-height: 1.4em;
-            }
-
-            #video {
-                display: none;
-                z-index: 0;
-            }
-
-            #img,
-            #test1 {
-                cursor: pointer;
-            }
-
-            footer {
-                margin: 30px auto;
-                text-align: center;
-            }
-
-            .heart {
-                font-style: normal;
-                font-weight: 500;
-                color: #c0392b;
-            }
-
-            #twitter {
-                position: absolute;
-                top: 20px;
-                left: 20px;
-            }
-
-            #github {
-                display: inline-block;
-                position: fixed;
-                top: 0;
-                right: 0;
-                z-index: 100;
-                border: 0;
-                width: 149px;
-                height: 149px;
-            }
-
-        </style>
+        <link rel="stylesheet" href="demo.css">
     </head>
     <body>
         <h1>Flipload.js</h1>
         <h2>Flipping elements and show a loading indicator easily.</h2>
         <ul>
-            <li id="test1" class="box">
+            <li id="example1" class="box pointer">
                 <div>
                     <h3>Example 1</h3>
                     <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
@@ -223,10 +24,11 @@
                     <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
                 </div>
             </li>
+
             <li>
                 <div class="box">
                     <h3>Example 2</h3>
-                    <form id="test2" role="form">
+                    <form id="example2" role="form">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
@@ -239,25 +41,52 @@
                     </form>
                 </div>
             </li>
+
             <li class="box">
                 <h3>Example 3</h3>
                 <div class="lead">Do you want to flip these buttons?</div>
-                <button type="button" id="test3" class="btn btn-success btn-lg">Continue</button>
-                <button type="button" id="test4" class="btn btn-danger btn-lg">Cancel</button>
+                <button type="button" id="example3" class="btn btn-success btn-lg">Continue</button>
+                <button type="button" id="example4" class="btn btn-danger btn-lg">Cancel</button>
             </li>
+
             <li class="box">
                 <h3>Real-world Example</h3>
-                <div id="test5">
-                    <iframe id="video" width="400" height="300" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" src="javascript:false" height="230" class="test"></iframe>
-                    <img id="img" width="400" height="300" src="https://i.ytimg.com/vi/xEhaVhta7sI/hqdefault.jpg">
+                <div id="example5">
+                    <iframe id="video" width="400" height="300" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" src="javascript:false" height="230"></iframe>
+                    <img id="img" class="pointer" width="400" height="300" src="https://i.ytimg.com/vi/xEhaVhta7sI/hqdefault.jpg">
                 </div>
             </li>
+
+            <li id="example6" class="box pointer">
+                <div>
+                    <h3>Custom Example</h3>
+                    <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.</p>
+
+                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                </div>
+            </li>
+
+            <li id="example7" class="box pointer">
+                <div>
+                    <h3>Horizontal Line Example</h3>
+                    <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.</p>
+
+                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                </div>
+            </li>
+
         </ul>
 
         <footer>
             <iframe id="twitter" allowtransparency="true" frameborder="0" width="100" height="22" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.html?text=Flipload.js%3A%20Flipping%20elements%20and%20show%20a%20loading%20indicator%20easily.&amp;url=http%3A%2F%2Fpazguille.github.io%2Fflipload&amp;via=pazguille"></iframe>
-
-
 
             <a href="https://github.com/pazguille/flipload" id="github"><img width="149" height="149" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 
@@ -265,59 +94,6 @@
         </footer>
 
         <script src="build.js"></script>
-        <script>
-            var Flipload = require('flipload'),
-                img = document.getElementById('img'),
-                iframe = document.getElementById('video'),
-                flip1 = new Flipload(document.getElementById('test1')),
-                flip2 = new Flipload(document.getElementById('test2')),
-                flip3 = new Flipload(document.getElementById('test3')),
-                flip4 = new Flipload(document.getElementById('test4')),
-                flip5 = new Flipload(document.getElementById('test5'));
-
-            document.getElementById('test1').onclick = function () {
-                flip1.load();
-                window.setTimeout(function () {
-                    flip1.done();
-                }, 2000);
-            };
-            document.getElementById('test2').onsubmit = function () {
-                flip2.load();
-
-                window.setTimeout(function () {
-                    flip2.done();
-                }, 2000);
-
-                return false;
-            };
-            document.getElementById('test3').onclick = function () {
-                flip3.load();
-                window.setTimeout(function () {
-                    flip3.done();
-                }, 2000);
-            };
-            document.getElementById('test4').onclick = function () {
-                flip4.load();
-                window.setTimeout(function () {
-                    flip4.done();
-                }, 2000);
-            };
-
-            document.getElementById('test5').onclick = function () {
-                flip5.load();
-
-                iframe.onload = function () {
-                    flip5.reverse.style.zIndex = '10';
-                    flip5.done();
-                    img.parentNode.removeChild(img);
-                    this.style.display = 'block';
-                };
-
-                window.setTimeout(function () {
-                    iframe.src = 'http://www.youtube.com/embed/xEhaVhta7sI?html5=1&autoplay=1';
-                }, 2000);
-
-            };
-        </script>
+        <script src="demo.js"></script>
     </body>
 </html>

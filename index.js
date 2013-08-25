@@ -65,6 +65,9 @@ Flipload.prototype.initialize = function (el, options) {
     // Create spinner
     this._createSpinner();
 
+    // Store the flipload instance
+    this.el.flipload = this;
+
     return this;
 };
 
@@ -76,12 +79,10 @@ Flipload.prototype.initialize = function (el, options) {
  * @returns {flipload} The instance of Flipload.
  */
 Flipload.prototype._createReverse = function () {
-    var parent = this.el.parentNode,
-        position = win.getComputedStyle(this.el, "").getPropertyValue('position') === 'fixed' ? 'fixed' : 'absolute';
 
     this.reverse = doc.createElement('div');
 
-    this.reverse.style.position = position;
+    this.reverse.style.position = win.getComputedStyle(this.el, "").getPropertyValue('position') === 'fixed' ? 'fixed' : 'absolute';;
 
     this.reverse.className = 'flipload-reverse flipload-reverse-' + this.options.line + ' ' + this.options.className;
 
@@ -89,7 +90,7 @@ Flipload.prototype._createReverse = function () {
 
     this._updateReverseOffset();
 
-    parent.insertBefore(this.reverse, this.el);
+    this.el.parentNode.insertBefore(this.reverse, this.el);
 
     return this;
 };
@@ -227,13 +228,18 @@ Flipload.prototype.toggle = function () {
  * @function
  */
 Flipload.prototype.destroy = function () {
-    var parent = this.el.parentNode;
 
+    // Remove classNames
     this.el.className = this.el.className.replace(/flipload-front(-(vertical|horizontal))?/g, '');
 
+    // Remove spinner
     this.spinner.remove();
 
-    parent.removeChild(this.reverse);
+    // Remove the reverse element
+    this.el.parentNode.removeChild(this.reverse);
+
+    // Remove the flipload instance
+    this.el.flipload = undefined;
 };
 
 // Expose Flipload

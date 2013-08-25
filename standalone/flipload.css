@@ -17,7 +17,18 @@
     backface-visibility: hidden;
 }
 
-.flipload-front {
+.flipload-reverse {
+    pointer-events: none;
+    background-color: #ecf0f1;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Vertical */
+.flipload-front-vertical {
     -webkit-transform: perspective(3000px) rotateY(0);
     -moz-transform: perspective(3000px) rotateY(0);
     -ms-transform: perspective(3000px) rotateY(0);
@@ -25,17 +36,15 @@
     transform: perspective(3000px) rotateY(0);
 }
 
-.flipload-reverse {
+.flipload-reverse-vertical {
     -webkit-transform: perspective(3000px) rotateY(-180deg);
     -moz-transform: perspective(3000px) rotateY(-180deg);
     -ms-transform: perspective(3000px) rotateY(-180deg);
     -o-transform: perspective(3000px) rotateY(-180deg);
     transform: perspective(3000px) rotateY(-180deg);
-    pointer-events: none;
-    background-color: #ecf0f1;
 }
 
-.flipload-front.flipload-loading {
+.flipload-front-vertical.flipload-loading {
     -webkit-transform: perspective(3000px) rotateY(180deg);
     -moz-transform: perspective(3000px) rotateY(180deg);
     -ms-transform: perspective(3000px) rotateY(180deg);
@@ -43,10 +52,43 @@
     transform: perspective(3000px) rotateY(180deg);
 }
 
-.flipload-reverse.flipload-loading {
+.flipload-reverse-vertical.flipload-loading {
     -webkit-transform: perspective(3000px) rotateY(0deg);
     -moz-transform: perspective(3000px) rotateY(0deg);
     -ms-transform: perspective(3000px) rotateY(0deg);
     -o-transform: perspective(3000px) rotateY(0deg);
     transform: perspective(3000px) rotateY(0deg);
+}
+
+/* Horizantal */
+.flipload-front-horizontal {
+    -webkit-transform: perspective(3000px) rotateX(0);
+    -moz-transform: perspective(3000px) rotateX(0);
+    -ms-transform: perspective(3000px) rotateX(0);
+    -o-transform: perspective(3000px) rotateX(0);
+    transform: perspective(3000px) rotateX(0);
+}
+
+.flipload-reverse-horizontal {
+    -webkit-transform: perspective(3000px) rotateX(-180deg);
+    -moz-transform: perspective(3000px) rotateX(-180deg);
+    -ms-transform: perspective(3000px) rotateX(-180deg);
+    -o-transform: perspective(3000px) rotateX(-180deg);
+    transform: perspective(3000px) rotateX(-180deg);
+}
+
+.flipload-front-horizontal.flipload-loading {
+    -webkit-transform: perspective(3000px) rotateX(180deg);
+    -moz-transform: perspective(3000px) rotateX(180deg);
+    -ms-transform: perspective(3000px) rotateX(180deg);
+    -o-transform: perspective(3000px) rotateX(180deg);
+    transform: perspective(3000px) rotateX(180deg);
+}
+
+.flipload-reverse-horizontal.flipload-loading {
+    -webkit-transform: perspective(3000px) rotateX(0deg);
+    -moz-transform: perspective(3000px) rotateX(0deg);
+    -ms-transform: perspective(3000px) rotateX(0deg);
+    -o-transform: perspective(3000px) rotateX(0deg);
+    transform: perspective(3000px) rotateX(0deg);
 }

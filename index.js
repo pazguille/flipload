@@ -72,9 +72,10 @@ Flipload.prototype.initialize = function (el, options) {
  * Creates the reverse element.
  * @memberof! Flipload.prototype
  * @function
+ * @private
  * @returns {flipload} The instance of Flipload.
  */
-Flipload.prototype.createReverse = function () {
+Flipload.prototype._createReverse = function () {
     var parent = this.el.parentNode,
         position = win.getComputedStyle(this.el, "").getPropertyValue('position') === 'fixed' ? 'fixed' : 'absolute';
 
@@ -97,9 +98,10 @@ Flipload.prototype.createReverse = function () {
  * Updates/refresh the size of the reverse element.
  * @memberof! Flipload.prototype
  * @function
+ * @private
  * @returns {flipload} The instance of Flipload.
  */
-Flipload.prototype.updateReverseSize = function () {
+Flipload.prototype._updateReverseSize = function () {
 
     this.reverse.style.width = this.el.offsetWidth + 'px';
     this.reverse.style.height = this.el.offsetHeight + 'px';
@@ -111,9 +113,10 @@ Flipload.prototype.updateReverseSize = function () {
  * Updates/refresh the offset of the reverse element.
  * @memberof! Flipload.prototype
  * @function
+ * @private
  * @returns {flipload} The instance of Flipload.
  */
-Flipload.prototype.updateReverseOffset = function () {
+Flipload.prototype._updateReverseOffset = function () {
 
     this.reverse.style.top = this.el.offsetTop + 'px';
     this.reverse.style.left = this.el.offsetLeft + 'px';
@@ -125,9 +128,10 @@ Flipload.prototype.updateReverseOffset = function () {
  * Creates spinner element.
  * @memberof! Flipload.prototype
  * @function
+ * @private
  * @returns {flipload} The instance of Flipload.
  */
-Flipload.prototype.createSpinner = function () {
+Flipload.prototype._createSpinner = function () {
 
     this.spinner = spin(this.reverse);
 

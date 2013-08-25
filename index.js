@@ -60,10 +60,10 @@ Flipload.prototype.initialize = function (el, options) {
     this.el.className += ' flipload-front flipload-front-' + this.options.line;
 
     // Create reverse element
-    this.createReverse();
+    this._createReverse();
 
     // Create spinner
-    this.createSpinner();
+    this._createSpinner();
 
     return this;
 };
@@ -85,9 +85,9 @@ Flipload.prototype._createReverse = function () {
 
     this.reverse.className = 'flipload-reverse flipload-reverse-' + this.options.line + ' ' + this.options.className;
 
-    this.updateReverseSize();
+    this._updateReverseSize();
 
-    this.updateReverseOffset();
+    this._updateReverseOffset();
 
     parent.insertBefore(this.reverse, this.el);
 

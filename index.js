@@ -146,6 +146,25 @@ Flipload.prototype._createSpinner = function () {
 };
 
 /**
+ * Update size and positon values of the reverse element and spinner.
+ * @memberof! Flipload.prototype
+ * @function
+ * @returns {flipload} The instance of Flipload.
+ */
+Flipload.prototype.update = function () {
+
+    // Update reverse
+    this._updateReverseSize();
+    this._updateReverseOffset();
+
+    // Update spinner
+    this.spinner.remove();
+    this._createSpinner();
+
+    return this;
+};
+
+/**
  * Flips and shows the spinner.
  * @memberof! Flipload.prototype
  * @function

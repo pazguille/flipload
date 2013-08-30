@@ -2,7 +2,7 @@
   "name": "flipload",
   "repo": "pazguille/flipload",
   "description": "Flipping HTML elements to show a loading indicator easily.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "twitter": "@pazguille",
   "keywords": [
     "flip",

@@ -14,7 +14,7 @@
     "transitions"
   ],
   "dependencies": {
-    "component/spin": "*"
+    "component/spin": "0.0.2"
   },
   "development": {},
   "license": "MIT",

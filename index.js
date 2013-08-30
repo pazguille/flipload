@@ -166,8 +166,7 @@ Flipload.prototype.update = function () {
     this._updateReverseOffset();
 
     // Update spinner
-    this.spinner.remove();
-    this._createSpinner();
+    this.spinner.update();
 
     return this;
 };

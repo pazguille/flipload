@@ -638,7 +638,6 @@ Spinner.prototype.draw = function(ctx){
 
 });
 require.register("component-spin/index.js", function(exports, require, module){
-
 /**
  * Module dependencies.
  */
@@ -671,20 +670,26 @@ module.exports = function(el, options){
   options = options || {};
   var ms = options.delay || 300;
 
-  var w = el.offsetWidth;
-  var h = el.offsetHeight;
+  // update size and position
+  spin.update = function(){
+    debug('update');
+    var w = el.offsetWidth;
+    var h = el.offsetHeight;
 
-  // size
-  var s = options.size || w / 5;
-  spin.size(s);
-  debug('show %dpx (%dms)', s, ms);
+    // size
+    var s = options.size || w / 5;
+    spin.size(s);
+    debug('show %dpx (%dms)', s, ms);
 
-  // position
-  css(spin.el, {
-    position: 'absolute',
-    top: h / 2 - s / 2,
-    left: w / 2 - s / 2
-  });
+    // position
+    css(spin.el, {
+      position: 'absolute',
+      top: h / 2 - s / 2,
+      left: w / 2 - s / 2
+    });
+  }
+
+  spin.update();
 
   // remove
   spin.remove = function(){
@@ -703,7 +708,6 @@ module.exports = function(el, options){
 
   return spin;
 };
-
 });
 require.register("flipload/index.js", function(exports, require, module){
 // Module dependencies.
@@ -874,8 +878,7 @@ Flipload.prototype.update = function () {
     this._updateReverseOffset();
 
     // Update spinner
-    this.spinner.remove();
-    this._createSpinner();
+    this.spinner.update();
 
     return this;
 };

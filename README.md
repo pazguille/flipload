@@ -9,7 +9,7 @@ It's compatible with:
 
 ## Installation
 
-    $ component install pazguille/is-near
+    $ component install pazguille/flipload
 
 See: [https://github.com/component/component](https://github.com/component/component)
 
